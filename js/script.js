@@ -1,24 +1,30 @@
 
 const Email = ["dariocostantini35@yahoo.it", "dariocostantini58@yahoo.it", "marcorossi@gmail.it"];
-let chiediMail = (prompt("Qual è la tua mail?"))
-// const dataMail = (Email[0, 2])
+const chiediMail = document.querySelector(".eleInput")
+const eleOutput = document.querySelector(".mailoutput")
+const eleInput = document.querySelector(".input")
 
-// for (let i = 0; i < Email.length; i++) {
-//     if (chiediMail === Email[i]) {
-//         console.log("La mail è corretta");
-//         document.querySelector(".mail").innerHTML = chiediMail 
-//     } else {
-//         console.log('La mail non è corretta');
-//         document.querySelector(".mail").innerHTML = "La mail non è presente nel database"
-//     }
+eleInput.addEventListener("click", function(){
+    let emailFound = false;
+    for (let i = 0;  i < Email.length; i++) {
+        if (chiediMail.value === Email[i]){
+            emailFound = true;             
+    }
+    if (emailFound) {
+        document.querySelector(".mail").innerHTML = chiediMail.value
+    }else{
+        document.querySelector(".mail").innerHTML = "La mai non è presente nel database"
+    }
+    }
+})
+
+// if (Email.includes(chiediMail)) {
+// 	console.log("La mail è corretta");
+//     document.querySelector(".mail").innerHTML = chiediMail 
+// } else {
+// 	console.log('La mail non è corretta');
+//     document.querySelector(".mail").innerHTML = "La mail non è presente nel database"
 // }
-if (Email.includes(chiediMail)) {
-	console.log("La mail è corretta");
-    document.querySelector(".mail").innerHTML = chiediMail 
-} else {
-	console.log('La mail non è corretta');
-    document.querySelector(".mail").innerHTML = "La mail non è presente nel database"
-}
 
 
 
